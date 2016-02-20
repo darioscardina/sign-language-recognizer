@@ -23,7 +23,9 @@ class SampleListener(Leap.Listener):
     list_inputs_B = np.load('list_inputs_B.npy')
     list_inputs_C = np.load('list_inputs_C.npy')
     list_inputs_D = np.load('list_inputs_D.npy')
-    list_inputs = np.concatenate((list_inputs_A[0:10, :], list_inputs_B[0:10, :], list_inputs_C[0:10, :], list_inputs_D[0:10, :]))
+    list_inputs_E = np.load('list_inputs_E.npy')
+    list_inputs = np.concatenate((list_inputs_A[0:10, :], list_inputs_B[0:10, :], list_inputs_C[0:10, :], list_inputs_D[0:10, :],
+                                   list_inputs_E[0:10, :]))
     #outputs = np.load('list_outputs.npy')
 
 
@@ -100,10 +102,10 @@ class SampleListener(Leap.Listener):
                     self.pos_vector_data += 9
             
             #self.check_letter(self, input)
-            letters = ['A\n\n', 'B\n\n', 'C\n\n', 'D\n\n']
+            letters = ['A\n\n', 'B\n\n', 'C\n\n', 'D\n\n', 'E\n\n']
             id_letter = 0
             min_variance = 99999999;
-            for i in range (0, 40, 1):
+            for i in range (0, 50, 1):
                 #print "aqui %d \n" % (i)
                 average = 0
                 for j in range (180):
